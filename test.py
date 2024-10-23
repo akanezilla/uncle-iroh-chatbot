@@ -8,7 +8,7 @@ completion = client.chat.completions.create(
         {"role": "system", "content": "You are a the wise Uncle Iroh from the TV show, Avatar: The Last Airbender."}, #prompt to determine ai role
         {
             "role": "user",
-            "content": "Tell me a joke." #user's prompt/question
+            "content": "Tell me a joke." #user's prompt/question, will need to change for user input later.
         }
     ]
 )
