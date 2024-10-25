@@ -1,59 +1,60 @@
 body {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    font-family: 'Arial', sans-serif;
-    background: url('uncle-iroh-background.png') no-repeat center center/cover;
-    height: 100vh;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .chat-container {
-    width: 80%;
-    max-width: 600px;
-    background-color: rgba(255, 255, 255, 0.8);
-    border-radius: 15px;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-    padding: 20px;
-  }
-  
-  .chat-box {
-    margin-bottom: 10px;
-  }
-  
-  .greeting {
-    font-size: 18px;
-    line-height: 1.6;
-    color: #333;
-  }
-  
-  .input-container {
-    display: flex;
-    border-radius: 8px;
-    overflow: hidden;
-    border: 1px solid #ccc;
-  }
-  
-  input[type="text"] {
-    flex: 1;
-    padding: 10px;
-    border: none;
-    outline: none;
-    font-size: 16px;
-  }
-  
-  button {
-    background-color: #4CAF50;
-    color: white;
-    border: none;
-    padding: 10px 15px;
-    cursor: pointer;
-    font-size: 16px;
-  }
-  
-  button:hover {
-    background-color: #45a049;
-  }
-  
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Arial', sans-serif;
+  background: url('uncle-iroh-background.png') no-repeat center center/cover;
+  height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start; /* Align content to the left */
+  padding-left: 40px; /* Optional padding to control left spacing */
+}
+
+.chat-container {
+  width: 80%;
+  max-width: 500px; /* Slightly reduce width to reveal more of the background */
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-left: 50px; /* Additional margin to nudge it away from the edge */
+}
+
+.chat-box {
+  margin-bottom: 10px;
+}
+
+.greeting {
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.input-container {
+  display: flex;
+  border-radius: 8px;
+  overflow: hidden;
+  border: 1px solid #ccc;
+}
+
+input[type="text"] {
+  flex: 1;
+  padding: 10px;
+  border: none;
+  outline: none;
+  font-size: 16px;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  padding: 10px 15px;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+button:hover {
+  background-color: #45a049;
+}
