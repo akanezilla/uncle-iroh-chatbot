@@ -1,0 +1,11 @@
+{
+    "happy": [
+        "hello", "hi", "good news", "excited", "happy", "joke", "laugh", "tea", "joy", "fun"
+    ],
+    "disappointed": [
+        "mistake", "fail", "sad", "regret", "sorry", "problem", "error", "wrong", "issue", "stumble"
+    ],
+    "wise": [
+        "advice", "wisdom", "help", "guidance", "question", "confused", "thoughts", "learn", "teach", "understand"
+    ]
+}
