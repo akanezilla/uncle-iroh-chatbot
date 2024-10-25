@@ -25,6 +25,9 @@ body {
   flex-direction: column; 
   justify-content: space-between; 
   overflow-y: auto;
+  font-size: 18px; 
+  line-height: 1.6; 
+  color: #333;
 }
 
 .chat-box {
@@ -33,17 +36,14 @@ body {
   overflow-y: auto; 
 }
 
-.greeting {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #333;
-}
-
 .input-container {
   display: flex;
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid #ccc;
+  min-height: 60%;
+  max-height: 60%;
+  overflow-y: auto;
 }
 
 input[type="text"] {
@@ -65,4 +65,14 @@ button {
 
 button:hover {
   background-color: #45a049;
+}
+
+.uncle-iroh-response {
+  text-align: right;
+  margin-right: 20px;
+}
+
+.user-response {
+  text-align: left;
+  margin-left: 20px;
 }
