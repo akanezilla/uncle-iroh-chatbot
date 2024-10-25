@@ -7,22 +7,30 @@ body {
   height: 100vh;
   display: flex;
   align-items: center;
-  justify-content: flex-start; /* Align content to the left */
-  padding-left: 40px; /* Optional padding to control left spacing */
+  justify-content: flex-start;
+  padding-left: 40px;
 }
 
 .chat-container {
-  width: 80%;
-  max-width: 500px; /* Slightly reduce width to reveal more of the background */
+  width: 70%;
+  max-width: 500px;
+  min-height: 60%;
+  max-height: 60%;
   background-color: rgba(255, 255, 255, 0.8);
   border-radius: 15px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   padding: 20px;
-  margin-left: 50px; /* Additional margin to nudge it away from the edge */
+  margin-left: 70px;
+  display: flex;
+  flex-direction: column; 
+  justify-content: space-between; 
+  overflow-y: auto;
 }
 
 .chat-box {
+  flex: 1;
   margin-bottom: 10px;
+  overflow-y: auto; 
 }
 
 .greeting {
