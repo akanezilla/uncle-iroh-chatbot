@@ -25,6 +25,9 @@ body {
   flex-direction: column; 
   justify-content: space-between; 
   overflow-y: auto;
+  font-size: 18px; 
+  line-height: 1.6; 
+  color: #333;
 }
 
 .chat-box {
@@ -33,17 +36,14 @@ body {
   overflow-y: auto; 
 }
 
-.greeting {
-  font-size: 18px;
-  line-height: 1.6;
-  color: #333;
-}
-
 .input-container {
   display: flex;
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid #ccc;
+  min-height: 60%;
+  max-height: 60%;
+  overflow-y: auto;
 }
 
 input[type="text"] {
@@ -67,53 +67,12 @@ button:hover {
   background-color: #45a049;
 }
 
-.steam {
-    position: absolute;
-    width: 10px;
-    height: 10px;
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 50%;
-    animation: steam-animation 4s infinite;
-    top: 32%;
-    left: 72.5%;
-    transform: translateX(-50%);
+.uncle-iroh-response {
+  text-align: right;
+  margin-right: 20px;
 }
 
-.steam2 {
-    position: absolute;
-    width: 7px;
-    height: 7px;
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 50%;
-    animation: steam-animation 4s infinite;
-    top: 32%;
-    left: 71%;
-    transform: translateX(-50%);
-}
-
-.steam3 {
-    position: absolute;
-    width: 7px;
-    height: 7px;
-    background: rgba(255, 255, 255, 0.7);
-    border-radius: 50%;
-    animation: steam-animation 4s infinite;
-    top: 32%;
-    left: 74%;
-    transform: translateX(-50%);
-}
-
-@keyframes steam-animation {
-    0% {
-        transform: translate(-50%, 0) scale(1);
-        opacity: 1;
-    }
-    50% {
-        transform: translate(-50%, -30px) scale(1.5);
-        opacity: 0.7;
-    }
-    100% {
-        transform: translate(-50%, -60px) scale(2);
-        opacity: 0;
-    }
+.user-response {
+  text-align: left;
+  margin-left: 20px;
 }

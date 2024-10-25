@@ -1,10 +1,17 @@
-const inputField = document.querySelector('input');
-const button = document.querySelector('button');
+const sendButton = document.getElementById('sendButton');
+const userInput = document.getElementById('userInput');
+const chatBox = document.getElementById('chatBox');
 
-button.addEventListener('click', () => {
-  const userInput = inputField.value.trim();
-  if (userInput) {
-    alert(`You said: "${userInput}". Uncle Iroh is pleased.`);
-    inputField.value = ''; // Clear input after sending
+sendButton.addEventListener('click', () => {
+  const message = userInput.value.trim(); 
+
+  if (message) {
+    const userMessage = document.createElement('p'); 
+    userMessage.textContent = message; 
+    userMessage.classList.add('user-message'); 
+
+    chatBox.appendChild(userMessage);
+    userInput.value = ''; 
+    chatBox.scrollTop = chatBox.scrollHeight;
   }
 });

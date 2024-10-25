@@ -8,13 +8,18 @@
 </head>
 <body>
   <div class="chat-container">
-    <div class="chat-box">
-      <p class="greeting">
-        Ah, welcome, dear friend! You've found your way to the wisdom of Uncle Iroh. 
-        Sit back, relax, and sip a warm cup of tea with me. Life is a journey filled with 
-        lessons and flavors, and I'm here to share them with you. 
-        What brings you to this humble tea shop today?
-      </p>
+    <div class="chat-box" id="chatBox">
+      <div class="uncle-iroh-response">
+        <p>
+          Ah, welcome, dear friend! You've found your way to the wisdom of Uncle Iroh. 
+          Sit back, relax, and sip a warm cup of tea with me. Life is a journey filled with 
+          lessons and flavors, and I'm here to share them with you. 
+          What brings you to this humble tea shop today?
+        </p>
+      </div>
+      <div class="user-response">
+        <!-- put user responses here? -->
+      </div>
     </div>
     <div class="tea-container">
         <div class="steam"></div>
@@ -26,9 +31,11 @@
         <div class="steam3" style="animation-delay: 3s;"></div>
     </div>
     <div class="input-container">
-      <input type="text" placeholder="Type here..." />
-      <button>&#x27A4;</button> <!-- Arrow symbol for the send button -->
+      <input type="text" id="userInput" placeholder="Type here..." />
+      <button id="sendButton">&#x27A4;</button>
     </div>
   </div>
+
+  <script src="script.js"></script>
 </body>
 </html>
