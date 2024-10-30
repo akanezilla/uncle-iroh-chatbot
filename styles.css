@@ -23,12 +23,14 @@ body {
   margin-left: 70px;
   display: flex;
   flex-direction: column; 
-  justify-content: space-between; 
-  overflow-y: auto;
+  align-items: stretch;
+  justify-content: flex-start;
+  overflow-y: auto; 
   font-size: 18px; 
   line-height: 1.6; 
   color: #333;
 }
+
 
 .chat-box {
   flex: 1;
@@ -69,12 +71,93 @@ button:hover {
   background-color: #45a049;
 }
 
-.uncle-iroh-response {
-  text-align: right;
-  margin-right: 20px;
+.user-response {
+  align-self: flex-end;
+  background-color: #4CAF50;
+  color: white;
+  padding: 8px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  max-width: 80%;
+  margin-bottom: 15px;
+  margin-top: 5px;
+  max-width: 80%;
 }
 
-.user-response {
-  text-align: left;
-  margin-left: 20px;
+.uncle-iroh-response {
+  align-self: flex-start;
+  background-color: #f0f0f0;
+  color: #333;
+  padding: 8px;
+  border-radius: 10px;
+  margin-bottom: 5px;
+  max-width: 80%;
+  margin-bottom: 15px;
+  margin-top: 5px;
+  max-width: 80%;
+}
+
+.steam {
+  position: absolute;
+  width: 10px;
+  height: 10px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  animation: steam-animation 4s ease-in-out infinite;
+  top: 35.5%;
+  left: 72.5%;
+  transform: translateX(-50%);
+}
+
+.steam2 {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  animation: steam-animation 4s  ease-in-out infinite;
+  top: 35%;
+  left: 71%;
+  transform: translateX(-50%);
+}
+
+.steam3 {
+  position: absolute;
+  width: 7px;
+  height: 7px;
+  background: rgba(255, 255, 255, 0.7);
+  border-radius: 50%;
+  animation: steam-animation 4s  ease-in-out infinite;
+  top: 35%;
+  left: 74%;
+  transform: translateX(-50%);
+}
+
+@keyframes steam-animation {
+  0% {
+      transform: translate(-50%, 0) scale(1);
+      opacity: 0;
+  }
+  10% {
+      opacity: 1;
+  }
+  100% {
+      transform: translate(-50%, -60px) scale(2);
+      opacity: 0;
+  }
+}
+
+@media (max-width: 600px) {
+  .chat-container {
+      width: 95%;
+      padding: 10px;
+  }
+
+  input[type="text"] {
+      font-size: 14px;
+  }
+
+  button {
+      font-size: 14px;
+  }
 }
