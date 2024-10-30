@@ -7,6 +7,11 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
+    <div class="api-key">
+        <input type="password" id="api-key-input" placeholder="Enter your OpenAI API key">
+        <button id="test-api-key">Test API Key</button>
+    </div>
+
     <div class="chat-container">
         <div class="chat-box" id="chat-output"></div>
         <div class="input-container">
@@ -19,20 +24,57 @@
     </div>
 
     <script>
-        const OPENAI_API_KEY = "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"; // Hardcoded for testing
-
+        let OPENAI_API_KEY = "";
+    
+        document.getElementById("test-api-key").addEventListener("click", async () => {
+            const apiKeyInput = document.getElementById("api-key-input");
+            const apiKey = apiKeyInput.value.trim();
+            if (!apiKey) {
+                alert("Please enter an API key");
+                return;
+            }
+    
+            try {
+                const response = await fetch('https://api.openai.com/v1/engines', {
+                    headers: {
+                        'Authorization': `Bearer ${apiKey}`
+                    }
+                });
+    
+                if (response.ok) {
+                    alert('API key is valid');
+                    OPENAI_API_KEY = apiKey;
+                    sessionStorage.setItem('openai_api_key', apiKey);
+                } else {
+                    alert('Invalid API key');
+                }
+            } catch (error) {
+                console.error('Error testing API key:', error);
+                alert('Error testing API key. Please try again.');
+            }
+        });
+    
+        function getApiKey() {
+            return OPENAI_API_KEY || sessionStorage.getItem('openai_api_key') || '';
+        }
+    
         async function getResponseFromIroh(userInput) {
             const messages = [
                 { role: "system", content: "You are Uncle Iroh from Avatar: The Last Airbender." },
                 { role: "user", content: userInput }
             ];
-
+    
             try {
-                const response = await fetch('https://api.openai.com/v1/chat/completions', { // Directly call the OpenAI API
+                const apiKey = getApiKey();
+                if (!apiKey) {
+                    throw new Error("API key not set. Please enter and test your API key.");
+                }
+    
+                const response = await fetch('https://api.openai.com/v1/chat/completions', {
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${OPENAI_API_KEY}` // Add the Authorization header
+                        'Authorization': `Bearer ${apiKey}`
                     },
                     body: JSON.stringify({
                         model: "gpt-3.5-turbo",
@@ -41,12 +83,12 @@
                         temperature: 0.7
                     })
                 });
-
+    
                 if (!response.ok) {
                     const errorText = await response.text();
                     throw new Error(`API error: ${response.status} ${errorText}`);
                 }
-
+    
                 const data = await response.json();
                 return data.choices[0].message.content.trim();
             } catch (error) {
@@ -54,7 +96,7 @@
                 return "Sorry, I'm having trouble thinking right now. Please try again.";
             }
         }
-
+    
         function displayMessage(text, isUser = false) {
             const chatOutput = document.getElementById("chat-output");
             const message = document.createElement("div");
@@ -63,14 +105,14 @@
             chatOutput.appendChild(message);
             chatOutput.scrollTop = chatOutput.scrollHeight;
         }
-
+    
         document.getElementById("send-btn").addEventListener("click", async () => {
             const userInput = document.getElementById("user-input").value;
             if (!userInput.trim()) return;
-
+    
             displayMessage(userInput, true);
             document.getElementById("user-input").value = "";
-
+    
             const irohResponse = await getResponseFromIroh(userInput);
             displayMessage(irohResponse);
         });
