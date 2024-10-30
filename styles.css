@@ -6,31 +6,11 @@ body {
   background: url('uncle-iroh-background.png') no-repeat center center/cover;
   height: 100vh;
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: flex-start;
   padding-left: 40px;
+  position: relative;
 }
-
-.chat-container {
-  width: 70%;
-  max-width: 500px;
-  min-height: 60%;
-  max-height: 60%;
-  background-color: rgba(255, 255, 255, 0.8);
-  border-radius: 15px;
-  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  padding: 20px;
-  margin-left: 70px;
-  display: flex;
-  flex-direction: column; 
-  align-items: stretch;
-  justify-content: flex-start;
-  overflow-y: auto; 
-  font-size: 18px; 
-  line-height: 1.6; 
-  color: #333;
-}
-
 
 .chat-box {
   flex: 1;
@@ -43,11 +23,11 @@ body {
   border-radius: 8px;
   overflow: hidden;
   border: 1px solid #ccc;
-  overflow-y: auto;
-  min-height: 30px;
-  min-width: 32%;
-  position: absolute;
-  top: 74%;
+  padding: 5px;
+  position: sticky;
+  bottom: 0;
+  width: 100%;
+  margin-top: auto;
 }
 
 input[type="text"] {
@@ -65,6 +45,7 @@ button {
   padding: 10px 15px;
   cursor: pointer;
   font-size: 16px;
+  border-radius: 8px;
 }
 
 button:hover {
@@ -97,6 +78,45 @@ button:hover {
   max-width: 80%;
 }
 
+.api-key {
+  position: fixed;
+  bottom: 20px;
+  left: 37%;
+  transform: translateX(-50%);
+  width: 300px;
+  padding: 15px;
+  background-color: #ffffff;
+  border: 2px solid #d3d3d3;
+  border-radius: 10px;
+  box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.chat-container {
+  width: 70%;
+  max-width: 500px;
+  min-height: 60%;
+  max-height: 60%;
+  top: 60px;
+  background-color: rgba(255, 255, 255, 0.8);
+  border-radius: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  padding: 20px;
+  margin-left: 230px;
+  margin-top: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
+  justify-content: flex-start;
+  overflow-y: auto;
+  font-size: 18px;
+  line-height: 1.6;
+  color: #333;
+}
+
 .steam {
   position: absolute;
   width: 10px;
@@ -104,33 +124,30 @@ button:hover {
   background: rgba(255, 255, 255, 0.7);
   border-radius: 50%;
   animation: steam-animation 4s ease-in-out infinite;
-  top: 35.5%;
+  top: 35%;
   left: 72.5%;
-  transform: translateX(-50%);
 }
 
 .steam2 {
-  position: absolute;
+  position: absolute; 
   width: 7px;
   height: 7px;
   background: rgba(255, 255, 255, 0.7);
   border-radius: 50%;
-  animation: steam-animation 4s  ease-in-out infinite;
-  top: 35%;
-  left: 71%;
-  transform: translateX(-50%);
+  animation: steam-animation 4s ease-in-out infinite;
+  top: 34%; 
+  left: 71%; 
 }
 
 .steam3 {
-  position: absolute;
+  position: absolute; 
   width: 7px;
   height: 7px;
   background: rgba(255, 255, 255, 0.7);
   border-radius: 50%;
-  animation: steam-animation 4s  ease-in-out infinite;
-  top: 35%;
-  left: 74%;
-  transform: translateX(-50%);
+  animation: steam-animation 4s ease-in-out infinite;
+  top: 34%; 
+  left: 73.5%; 
 }
 
 @keyframes steam-animation {
