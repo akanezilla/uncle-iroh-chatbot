@@ -19,7 +19,7 @@
     </div>
 
     <script>
-        const OPENAI_API_KEY = "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";
+        const OPENAI_API_KEY = "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"; // Hardcoded for testing
 
         async function getResponseFromIroh(userInput) {
             const messages = [
@@ -28,11 +28,11 @@
             ];
 
             try {
-                const response = await fetch('https://api.openai.com/v1/chat/completions', {
+                const response = await fetch('https://api.openai.com/v1/chat/completions', { // Directly call the OpenAI API
                     method: 'POST',
                     headers: {
                         'Content-Type': 'application/json',
-                        'Authorization': `Bearer ${OPENAI_API_KEY}`
+                        'Authorization': `Bearer ${OPENAI_API_KEY}` // Add the Authorization header
                     },
                     body: JSON.stringify({
                         model: "gpt-3.5-turbo",
